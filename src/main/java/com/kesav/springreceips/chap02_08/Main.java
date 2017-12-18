@@ -13,7 +13,7 @@ import com.kesav.springreceips.chap02.ShoppingCart;
 public class Main {
 	
 	public static void main(String[] args) throws IOException {
-		ApplicationContext context = new GenericXmlApplicationContext("com/kesav/springreceips/chap02_8/beans.xml");
+		ApplicationContext context = new GenericXmlApplicationContext("com/kesav/springreceips/chap02_08/beans.xml");
 		ShoppingCart shoppingCart = context.getBean("shoppingCart", ShoppingCart.class);
 		Product aaa = context.getBean("aaa", Battery.class);
 		Product cd = context.getBean("cdrw", Disc.class);

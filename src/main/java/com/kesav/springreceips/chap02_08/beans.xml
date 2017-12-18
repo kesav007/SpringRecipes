@@ -8,9 +8,9 @@
                            http://www.springframework.org/schema/context/spring-context.xsd ">
 	<import resource="classpath:main.xml" />
 
-	<bean name="cashier" class="com.kesav.springreceips.chap02_8.Cashier" init-method="openFile" destroy-method="close">
+	<bean name="cashier" class="com.kesav.springreceips.chap02_08.Cashier" init-method="openFile" destroy-method="close">
 		<property name="path"
-			value="C:/work/SpringRecieps/src/main/java/com/kesav/springreceips/chap02_8"/>
+			value="C:/work/SpringRecieps/src/main/java/com/kesav/springreceips/chap02_08"/>
 			<property name="filename" value="checkout"/>
 	</bean>
 </beans>
