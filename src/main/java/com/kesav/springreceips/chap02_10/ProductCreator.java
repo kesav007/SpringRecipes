@@ -9,15 +9,15 @@ public class ProductCreator {
 	public static Product createProduct(String product){
 
 		if("aaa".equals(product)){
-			return new Battery("aaa", 2.5);
+			return new Battery("AAA", 2.5);
 		}
 
 		if("cdrw".equals(product)){
-			return new Disc("CDRW", 3.5);
+			return new Disc("CD-RW", 3.5);
 		}
 
 		if("dvdrw".equals(product)){
-			return new Disc("DVDRW", 4.5);
+			return new Disc("DVD-RW", 4.5);
 		}
 		throw new IllegalArgumentException("Unknown Product");
 	}

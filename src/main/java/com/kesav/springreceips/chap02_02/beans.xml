@@ -7,18 +7,6 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd ">
 
-	<bean id="aaa" class="com.kesav.springreceips.chap02_02.Battery">
-		<property name="name" value="AAA" />
-		<property name="price" value="2.5" />
-		<property name="rechargeable" value="true" />
-	</bean>
-	
-	<bean id="cdrw" class="com.kesav.springreceips.chap02_02.Disc">
-		<property name="name" value="CD-RW" />
-		<property name="price" value="1.5" />
-		<property name="capacity" value="700" />
-	</bean>
-
 	<bean name="sequenceGenerator1" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
 		<constructor-arg value="30"></constructor-arg>
 		<constructor-arg value="A"></constructor-arg>

@@ -22,12 +22,9 @@ public class Main {
 		System.out.println("--------------------------");
 		Product harddisc = applicationContext.getBean("harddisc", Product.class);
 		System.out.println(harddisc);
-	
-		System.out.println("\n***********************\n");
-		
+		System.out.println("\n***********************\n");		
 		Product aaaFactory = applicationContext.getBean("aaaFactory", Product.class);
 		System.out.println(aaaFactory);
-
 		System.out.println("\n***********************\n");
 */		
 		Product aaaBattery= applicationContext.getBean("aaaBattery", Product.class);

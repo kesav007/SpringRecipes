@@ -26,7 +26,4 @@
 	
 	<bean name="randomPrefixGenerator" class="com.kesav.springreceips.chap02_03.RandomPrefixGenerator" primary="true">
 	</bean>
-	
-	
-
 </beans>

@@ -8,19 +8,19 @@
                            http://www.springframework.org/schema/context/spring-context.xsd ">
                            
 	<bean name="aaa" class="com.kesav.springreceips.chap02.Battery">
-		<constructor-arg value="aaa" />
+		<constructor-arg value="AAA" />
 		<constructor-arg value="10" />
 		<property name="rechargeable" value="true" />
 		<property name="discount" value="${specialcustomer.discount:0}" />
 	</bean>
 	<bean name="cdrw" class="com.kesav.springreceips.chap02.Disc">
-		<constructor-arg value="cdrw" />
+		<constructor-arg value="CR-RW" />
 		<constructor-arg value="15" />
 		<property name="capacity" value="700" />
 		<property name="discount" value="${summer.discount:0}" />
 	</bean>
 	<bean name="dvdrw" class="com.kesav.springreceips.chap02.Disc">
-		<constructor-arg value="dvdrw" />
+		<constructor-arg value="DVD-RW" />
 		<constructor-arg value="45" />
 		<property name="capacity" value="1400" />
 		<property name="discount" value="${endofyear.discount:0}" />
@@ -32,8 +32,9 @@
 		<property name="capacity" value="150"/>
 		<property name="discount" value="10"/>
 	</bean>
-
-	<bean name="shoppingCart" class="com.kesav.springreceips.chap02.ShoppingCart" />
+	
+	<!-- Shopping Cart bean should prototype since it should not be shared   accross different customers-->
+	<bean name="shoppingCart" class="com.kesav.springreceips.chap02.ShoppingCart"  scope="prototype" />
 
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
@@ -51,8 +52,5 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true"></property>
 		<property name="ignoreResourceNotFound" value="true"></property>
 	</bean>
-	
-<!-- 	<bean class="com.kesav.springreceips.chap02_09.AuditCheckBeanPostProcessor"/> -->
-	<bean class="com.kesav.springreceips.chap02_09.ProductCheckBeanPostProcesser"/>
 	
 </beans>

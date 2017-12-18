@@ -1,4 +1,1 @@
-Sat Dec 16 22:28:29 EST 2017	[Product [name=aaa, price=10.0, discount=0.1], Product [name=cdrw, price=15.0, discount=0.15], Product [name=dvdrw, price=45.0, discount=0.2]]
-Sat Dec 16 22:29:05 EST 2017	[Product [name=aaa, price=10.0, discount=0.1], Product [name=cdrw, price=15.0, discount=0.15], Product [name=dvdrw, price=45.0, discount=0.2]]
-Sat Dec 16 22:53:31 EST 2017	[Product [name=aaa, price=10.0, discount=0.1], Product [name=cdrw, price=15.0, discount=0.15], Product [name=dvdrw, price=45.0, discount=0.2]]
-Sat Dec 16 23:02:14 EST 2017	[Product [name=aaa, price=10.0, discount=0.1], Product [name=cdrw, price=15.0, discount=0.15], Product [name=dvdrw, price=45.0, discount=0.2]]
+Mon Dec 18 16:28:53 EST 2017	[Battery [rechargeable=true, name=aaa, price=10.0, discount=0.1], Disc [capacity=700,  name=cdrw, price=15.0, discount=0.15], Disc [capacity=1400,  name=dvdrw, price=45.0, discount=0.2]]

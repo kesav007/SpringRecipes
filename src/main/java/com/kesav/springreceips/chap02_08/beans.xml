@@ -9,8 +9,7 @@
 	<import resource="classpath:main.xml" />
 
 	<bean name="cashier" class="com.kesav.springreceips.chap02_08.Cashier" init-method="openFile" destroy-method="close">
-		<property name="path"
-			value="C:/work/SpringRecieps/src/main/java/com/kesav/springreceips/chap02_08"/>
+		<property name="path" value="C:/Users/Manasavi/git/SpringRecipes/src/main/java/com/kesav/springreceips/chap02_08"/>
 			<property name="filename" value="checkout"/>
 	</bean>
 </beans>

@@ -3,7 +3,13 @@ package com.kesav.springreceips.chap02_10;
 import java.util.Map;
 
 import com.kesav.springreceips.chap02.Product;
-
+/**
+ * 
+ * @author Manasavi
+ * 
+ * This is a factory bean
+ *
+ */
 public class ProductCreatorInstanceFactoryBean {
 	
 	private Map<String, Product> products;
@@ -12,6 +18,11 @@ public class ProductCreatorInstanceFactoryBean {
 		this.products = products;
 	}
 	
+	/**
+	 * This is  a factory method
+	 * @param productId
+	 * @return
+	 */
 	public Product createProduct(String productId){
 		Product product = products.get(productId);
 		if(product != null){
