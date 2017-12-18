@@ -7,7 +7,7 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd ">
 
-	<bean name="sequenceGenerator" class="com.kesav.springreceips.chap02_4.SequenceGenerator">
+	<bean name="sequenceGenerator" class="com.kesav.springreceips.chap02_04.SequenceGenerator">
 		<property name="prefix" value="A"></property>
 		<property name="initial" value="1000"></property>
 		<property name="suffixes">

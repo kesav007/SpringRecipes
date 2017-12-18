@@ -10,7 +10,7 @@ import com.kesav.springreceips.chap02.ShoppingCart;
 public class Main {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new GenericXmlApplicationContext("com/kesav/springreceips/chap02_5/beans.xml");
+		ApplicationContext applicationContext = new GenericXmlApplicationContext("com/kesav/springreceips/chap02_05/beans.xml");
 		ShoppingCart shoppingCart =  applicationContext.getBean("shoppingCart", ShoppingCart.class);
 		Battery aaaBattery = applicationContext.getBean("aaa", Battery.class);
 		Disc cdrw= applicationContext.getBean("cdrw", Disc.class);

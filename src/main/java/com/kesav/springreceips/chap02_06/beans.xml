@@ -6,8 +6,10 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<import resource="classpath:main.xml"/>
                            	
-	<bean name="bannerLoader" class="com.kesav.springreceips.chap02_6.BannerLoader"  init-method="showBanner">
+	<bean name="bannerLoader" class="com.kesav.springreceips.chap02_06.BannerLoader"  init-method="showBanner">
 		<property name="banner">
 			<value>classpath:banner.txt</value>
 		</property>
