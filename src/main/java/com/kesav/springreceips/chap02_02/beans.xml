@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<bean id="aaa" class="com.kesav.springreceips.chap02_02.Battery">
+		<property name="name" value="AAA" />
+		<property name="price" value="2.5" />
+		<property name="rechargeable" value="true" />
+	</bean>
+	
+	<bean id="cdrw" class="com.kesav.springreceips.chap02_02.Disc">
+		<property name="name" value="CD-RW" />
+		<property name="price" value="1.5" />
+		<property name="capacity" value="700" />
+	</bean>
+
+	<bean name="sequenceGenerator1" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
+		<constructor-arg value="30"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<property name="initial" value="1000"></property>
+	</bean>
+	
+	<bean name="sequenceGenerator2" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
+		<constructor-arg value="30"></constructor-arg>
+		<constructor-arg value="1000"></constructor-arg>
+		<property name="suffix" value="A"></property>
+	</bean>
+	<bean name="sequenceGenerator3" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
+		<constructor-arg type="java.lang.String" value="30"></constructor-arg>
+		<constructor-arg type="int" value="1000"></constructor-arg>
+		<property name="suffix" value="A"></property>
+	</bean>
+
+	<bean name="sequenceGenerator4" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
+		<constructor-arg type="int" value="1000"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="A"></constructor-arg>
+		<property name="prefix" value="30"></property>
+	</bean>
+
+	<!-- Constructor Ambiguity resolved by index value -->
+	<bean name="sequenceGenerator5" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
+		<constructor-arg type="int" index="0" value="1000"></constructor-arg>
+		<constructor-arg type="java.lang.String" index="1" value="A"></constructor-arg>
+		<property name="prefix" value="30"></property>
+	</bean>
+
+	<bean name="sequenceGenerator6" class="com.kesav.springreceips.chap02_02.SequenceGenerator">
+		<constructor-arg name="initial1" value="1000"></constructor-arg>
+		<constructor-arg name="suffix1" value="A"></constructor-arg>
+		<property name="prefix" value="30"></property>
+	</bean>
+
+</beans>

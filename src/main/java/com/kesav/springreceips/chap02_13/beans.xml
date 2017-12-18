@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd 
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<bean id="aaa"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField" value="com.kesav.springreceips.chap02_13.Main.AAA"/>
+	</bean>
+	<bean id="cdrw"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField" value="com.kesav.springreceips.chap02_13.Main.CDRW"/>
+	</bean>
+
+	<util:constant id="aaastatic"
+		static-field="com.kesav.springreceips.chap02_13.Main.AAA" />
+	<util:constant id="cdrwstatic"
+		static-field="com.kesav.springreceips.chap02_13.Main.CDRW" />
+
+	<bean id="productRanking" class="com.kesav.springreceips.chap02_13.ProductRanking">
+		<property name="bestSeller">
+			<bean class="com.kesav.springreceips.chap02.Disc">
+				<property name="name" value="CD-RW" />
+				<property name="price" value="2.5" />
+				<property name="capacity" value="700" />
+				<property name="discount" value="10" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="bestSeller" class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<property name="targetObject"  ref="productRanking"/>
+		<property name="propertyPath" value="bestSeller"/>		
+	</bean>
+	
+	<util:property-path id="bestSellerPath" path="productRanking.bestSeller"/>
+</beans>

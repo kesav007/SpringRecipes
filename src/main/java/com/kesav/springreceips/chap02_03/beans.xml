@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<bean name="datePrefixGenerator" class="com.kesav.springreceips.chap02_03.DatePrefixGenerator">
+		<property name="pattern" value="yyyyMMdd"></property>
+	</bean>
+
+	<bean name="prefixGenerator" class="com.kesav.springreceips.chap02_03.DatePrefixGenerator">
+		<property name="pattern" value="yyyyMMdd"></property>
+	</bean>
+	
+	<!-- autowrie by type, Ambiguity will rise if we have two beans of same type, then primary will take precedence-->
+
+	<bean name="sequenceGenerator" class="com.kesav.springreceips.chap02_03.SequenceGenerator" autowire="byName">
+		<property name="suffix" value="A"></property>
+		<property name="initial" value="1000"></property>
+	</bean>
+	
+	<!-- primary, removes the ambiguity for autowire = "byType" -->
+	
+	<bean name="randomPrefixGenerator" class="com.kesav.springreceips.chap02_03.RandomPrefixGenerator" primary="true">
+	</bean>
+	
+	
+
+</beans>

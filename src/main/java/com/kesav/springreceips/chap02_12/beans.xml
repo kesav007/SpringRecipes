@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd 
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<bean id="calculatorLoggingAspect"
+		class="com.kesav.springreceips.chap02_12.CalculatorLoggingAspect" />
+	<bean id="arithmeticCalculator"
+		class="com.kesav.springreceips.chap02_12.ArithmeticCalculatorImpl" />
+	<bean id="unitCalculator"
+		class="com.kesav.springreceips.chap02_12.UnitCalculatorImpl" />
+	<!-- 	
+	<aop:config>	
+		<aop:aspect id="loggingAspect" ref="calculatorLoggingAspect">
+			<aop:pointcut id="loggingOperation"
+			expression="within(com.kesav.springreceips.chap02_12.ArithmeticCalculator+) ||
+								  within(com.kesav.springreceips.chap02_12.UnitCalculator+)" />		
+			<aop:before method="logBefore" pointcut-ref="loggingOperation"/>
+			<aop:after method="logAfter" pointcut-ref="loggingOperation"/>
+			<aop:after-returning method="logAfterReturning" pointcut-ref="loggingOperation" returning="result"/>
+			<aop:after-throwing method="logAfterThrowing" pointcut-ref="loggingOperation" throwing="e"/>
+			<aop:around method="logAround" pointcut-ref="loggingOperation" />
+		</aop:aspect>		
+	</aop:config>
+	 -->
+	 <aop:config>
+        <aop:aspect id="loggingAspect" ref="calculatorLoggingAspect">
+	        <aop:pointcut id="loggingOperation" expression="within(com.kesav.springreceips.chap02_12.ArithmeticCalculator+) || within(com.kesav.springreceips.chap02_12.UnitCalculator+)" />
+	        <aop:before pointcut-ref="loggingOperation" method="logBefore" />
+	        <aop:after pointcut-ref="loggingOperation" method="logAfter" />
+	        <aop:after-returning pointcut-ref="loggingOperation" returning="result" method="logAfterReturning" />
+	        <aop:after-throwing pointcut-ref="loggingOperation" throwing="e" method="logAfterThrowing" />
+	        <aop:around pointcut-ref="loggingOperation" method="logAround" />
+	     </aop:aspect>
+    </aop:config>
+	 
+</beans>

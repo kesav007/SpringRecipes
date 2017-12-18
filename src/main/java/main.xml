@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+                           
+	<bean name="aaa" class="com.kesav.springreceips.chap02.Battery">
+		<constructor-arg value="aaa" />
+		<constructor-arg value="10" />
+		<property name="rechargeable" value="true" />
+		<property name="discount" value="${specialcustomer.discount:0}" />
+	</bean>
+	<bean name="cdrw" class="com.kesav.springreceips.chap02.Disc">
+		<constructor-arg value="cdrw" />
+		<constructor-arg value="15" />
+		<property name="capacity" value="700" />
+		<property name="discount" value="${summer.discount:0}" />
+	</bean>
+	<bean name="dvdrw" class="com.kesav.springreceips.chap02.Disc">
+		<constructor-arg value="dvdrw" />
+		<constructor-arg value="45" />
+		<property name="capacity" value="1400" />
+		<property name="discount" value="${endofyear.discount:0}" />
+	</bean>
+	
+	<bean name="harddisc" class="com.kesav.springreceips.chap02.Disc">
+		<property name="name" value="Hard Disc"/>
+		<property name="price" value="200"/>
+		<property name="capacity" value="150GB"/>
+		<property name="discount" value="10"/>
+	</bean>
+
+	<bean name="shoppingCart" class="com.kesav.springreceips.chap02.ShoppingCart" />
+
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>classpath:messages</value>
+			</list>
+		</property>
+		<property name="cacheSeconds" value="1"></property>
+	</bean>
+	
+	<bean name ="discounts" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:discounts.properties</value>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true"></property>
+		<property name="ignoreResourceNotFound" value="true"></property>
+	</bean>
+	
+<!-- 	<bean class="com.kesav.springreceips.chap02_9.AuditCheckBeanPostProcessor"/> -->
+	<bean class="com.kesav.springreceips.chap02_9.ProductCheckBeanPostProcesser"/>
+	
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<bean name="sequenceGenerator1" class="com.kesav.springreceips.chap02_01.SequenceGenerator">
+		<property name="prefix">
+			<value>30</value>
+		</property>
+		<property name="suffix">
+			<value>A</value>
+		</property>
+		<property name="initial">
+			<value>1000</value>
+		</property>
+	</bean>
+
+	<bean name="sequenceGenerator2" class="com.kesav.springreceips.chap02_01.SequenceGenerator">
+		<property name="prefix" value="30" />
+		<property name="suffix" value="A" />
+		<property name="initial" value="1000" />
+	</bean>
+
+	<bean name="sequenceGenerator3" class="com.kesav.springreceips.chap02_01.SequenceGenerator">
+		<constructor-arg>
+			<value>30</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>A</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>1000</value>
+		</constructor-arg>
+	</bean>
+	<bean name="sequenceGenerator4" class="com.kesav.springreceips.chap02_01.SequenceGenerator">
+		<constructor-arg value="30"></constructor-arg>
+		<constructor-arg value="A"></constructor-arg>
+		<constructor-arg value="1000"></constructor-arg>
+	</bean>
+
+</beans>

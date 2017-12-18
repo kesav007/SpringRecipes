@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd ">
+
+	<bean id="aaaFactory" class="com.kesav.springreceips.chap02_10.ProductCreator" factory-method="createProduct">
+		<constructor-arg name="product" value="aaa" />
+	</bean>
+	<bean id="cdrwFactory" class="com.kesav.springreceips.chap02_10.ProductCreator" factory-method="createProduct">
+		<constructor-arg name="product" value="cdrw" />
+	</bean>
+	<bean id="dvdrwFactory" class="com.kesav.springreceips.chap02_10.ProductCreator" factory-method="createProduct">
+		<constructor-arg name="product" value="dvdrw" />
+	</bean>
+
+	<bean id="productCreatorInstanceFactoryBean"
+		class="com.kesav.springreceips.chap02_10.ProductCreatorInstanceFactoryBean">
+		<property name="products">
+			<map>
+				<entry key="aaa">
+					<bean class="com.kesav.springreceips.chap02.Battery">
+						<property name="name" value="aaa" />
+						<property name="price" value="1.5" />
+						<property name="rechargeable" value="true" />
+					</bean>
+				</entry>
+				<entry key="cdrw">
+					<bean class="com.kesav.springreceips.chap02.Disc">
+						<property name="name" value="cdrw" />
+						<property name="price" value="2.5" />
+						<property name="capacity" value="700" />
+					</bean>
+				</entry>
+				<entry key="dvdrw">
+					<bean class="com.kesav.springreceips.chap02.Disc">
+						<property name="name" value="dvdrw" />
+						<property name="price" value="3.5" />
+						<property name="capacity" value="1400" />
+					</bean>
+				</entry>
+				<entry key="harddisc">
+					<bean name="harddisc" class="com.kesav.springreceips.chap02.Disc">
+						<property name="name" value="Hard Disc"/>
+						<property name="price" value="200"/>
+						<property name="capacity" value="150"/>
+						<property name="discount" value="10"/>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="aaa" factory-bean="productCreatorInstanceFactoryBean" factory-method="createProduct">
+		<constructor-arg value="aaa"/>
+	</bean>
+	<bean id="cdrw" factory-bean="productCreatorInstanceFactoryBean" factory-method="createProduct">
+		<constructor-arg value="cdrw"/>
+	</bean>
+	<bean id="dvdrw" factory-bean="productCreatorInstanceFactoryBean" factory-method="createProduct">
+		<constructor-arg value="dvdrw"/>
+	</bean>
+	<bean id="harddisc" factory-bean="productCreatorInstanceFactoryBean" factory-method="createProduct">
+		<constructor-arg value="harddisc"/>
+	</bean>
+	
+	<bean id="aaaBattery" class="com.kesav.springreceips.chap02.Battery">
+		<property name="name" value="AAA" />
+		<property name="price" value="100" />
+		<property name="rechargeable" value="true" />
+	</bean>
+						
+	<bean id="aaadiscountFactoryBean" class="com.kesav.springreceips.chap02_10.DiscountFactoryBean">
+	<property name="product" ref="aaaBattery"/>
+	<property name="discount" value="0.5"/>
+	</bean>
+</beans>
