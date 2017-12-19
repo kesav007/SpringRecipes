@@ -22,7 +22,7 @@ public class SequenceGeneratorConfig {
 	@Bean
 	public PrefixGenerator prefixGenerator() {
 		DatePrefixGenerator prefixGenerator = new DatePrefixGenerator();
-		prefixGenerator.setPattern("MMDDYYYY");
+		prefixGenerator.setPattern("MMM-dd-yyyy-");
 		return prefixGenerator;
 	}
 	

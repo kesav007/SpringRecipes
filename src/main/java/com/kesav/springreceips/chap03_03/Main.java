@@ -13,6 +13,8 @@ public class Main {
 		SequenceGenerator sequenceGenerator = context.getBean("sequenceGenerator", SequenceGenerator.class);
 		System.out.println(sequenceGenerator.getSequence());
 		System.out.println(sequenceGenerator.getSequence());
+		
+		System.out.println("**************************");
 
 		SequenceService service = context.getBean("sequenceService", SequenceService.class);
 		System.out.println(service.generate("IT"));

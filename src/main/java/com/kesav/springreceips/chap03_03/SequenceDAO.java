@@ -4,8 +4,6 @@ public interface SequenceDAO {
 	
 	public Sequence getSequence(String sequenceId);
 	
-	public SequenceGeneratorPrefix getSequenceGeneratorPrefix(String sequenceId);
-	
 	public int getNextValue(String sequenceId);
 
 }
